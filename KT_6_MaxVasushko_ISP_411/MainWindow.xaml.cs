@@ -20,6 +20,9 @@ namespace KT_6_MaxVasushko_ISP_411
         public MainWindow()
         {
             InitializeComponent();
+
+            Classes.Manager.frameHelper = frameContainer;
+            Classes.Manager.frameHelper.Navigate(new Pages.LoginPage());
         }
     }
 }

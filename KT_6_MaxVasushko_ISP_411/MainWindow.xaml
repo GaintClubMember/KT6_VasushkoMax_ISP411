@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:KT_6_MaxVasushko_ISP_411"
         mc:Ignorable="d"
         Icon="/Resources/Icon.ico"
-        Title="asd" Height="600" Width="800">
+        Title="{Binding ElementName=frameContainer, Path=Content.Title}" Height="600" Width="800">
     <Grid>
 
         <Grid.RowDefinitions>
