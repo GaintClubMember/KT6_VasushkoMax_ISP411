@@ -69,7 +69,7 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
 
                     if (authentificatedUserData.Role.RoleName == "Администратор")
                     {
-                        Classes.Manager.frameHelper.Navigate(new Pages.LoginPage()); // change page
+                        Classes.Manager.frameHelper.Navigate(new Pages.AdminListViewPage()); // change page
                         roleString.AppendLine("Администратор");
                         MessageBox.Show($"Успешная авторизация.\nВы {roleString.ToString()}", "Успешно авторизировано", MessageBoxButton.OK, MessageBoxImage.Information);
                     }

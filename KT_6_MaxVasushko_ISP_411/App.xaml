@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:KT_6_MaxVasushko_ISP_411"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+
+        
          
     </Application.Resources>
 </Application>

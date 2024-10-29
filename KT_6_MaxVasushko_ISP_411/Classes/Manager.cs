@@ -12,5 +12,7 @@ namespace KT_6_MaxVasushko_ISP_411.Classes
 
         public static Frame frameHelper {  get; set; }
 
+        // needs to implement method to code and write images to DB
+
     }
 }
