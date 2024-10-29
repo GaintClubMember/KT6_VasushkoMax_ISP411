@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KT_6_MaxVasushko_ISP_411"
         mc:Ignorable="d"
-        Icon=""
-        Title="MainWindow" Height="600" Width="800">
+        Icon="/Resources/Icon.ico"
+        Title="asd" Height="600" Width="800">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -20,12 +20,12 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="0"></Image>
-            <Label Grid.Column="1" Grid.ColumnSpan="2"></Label>
+            
+            <Image Grid.Column="0" Source="/Resources/logo.png" HorizontalAlignment="Right"></Image>
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Content="ООО «Товары для животных»" VerticalAlignment="Center"></Label>
         </Grid>
         
-        <Frame Grid.Row="1" x:Name="frameContainer"></Frame>
-
+        <Frame Grid.Row="1" x:Name="frameContainer" NavigationUIVisibility="Hidden"></Frame>
 
     </Grid>
 </Window>

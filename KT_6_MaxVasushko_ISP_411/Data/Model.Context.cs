@@ -15,6 +15,16 @@ namespace KT_6_MaxVasushko_ISP_411.Data
     
     public partial class Trade_Entities : DbContext
     {
+
+        private static Trade_Entities _context;
+        public static Trade_Entities GetContext()
+        {
+            if (_context == null)
+            {
+                _context = new Trade_Entities();
+            }
+            return _context;
+        }
         public Trade_Entities()
             : base("name=Trade_Entities")
         {
