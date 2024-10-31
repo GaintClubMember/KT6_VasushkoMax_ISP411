@@ -27,19 +27,21 @@
         
         
         <!-- listview bellow -->
-        <ListView Grid.Row="1" x:Name="listViewPlace">
+        <ListView Grid.Row="1" x:Name="listViewPlace" HorizontalAlignment="Center">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     
-                    <Grid Height="110" Width="780">
+                    <Grid Height="110" Width="750">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                            <ColumnDefinition Width="500"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
                             <Grid Grid.Column="0">
-                            <Image x:Name="imagePlace"></Image>
+                            <Image x:Name="imagePlace">
+                                <!-- Need to add NULL value picture -->
+                            </Image>
                             </Grid>
 
                             <Grid Grid.Column="1">
@@ -50,14 +52,14 @@
                                     <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
 
-                                <Label Grid.Row="0" x:Name="itemName" Content="{Binding Names.NamesName}" FontSize="10"></Label>
-                            <Label Grid.Row="0" x:Name="itemDesc" Content="{Binding ProductDescription}" FontSize="10"></Label>
-                            <Label Grid.Row="0" x:Name="itemManufacturer" Content="" FontSize="10"></Label >
-                            <Label Grid.Row="0" x:Name="itemPrice" Content="" FontSize="10"></Label>
+                            <Label Grid.Row="0" x:Name="itemName" Content="{Binding Names.NamesName}" Width="350" FontSize="13" FontWeight="Bold" HorizontalAlignment="Left"></Label>
+                            <Label Grid.Row="1" x:Name="itemDesc" Content="{Binding ProductDescription}" Width="350" FontSize="10" HorizontalAlignment="Left"></Label>
+                            <Label Grid.Row="2" x:Name="itemManufacturer" Content="{Binding Manufacturer.ManufacturerName}"  Width="350" FontSize="10" HorizontalAlignment="Left"></Label >
+                            <Label Grid.Row="3" x:Name="itemPrice" Content="{Binding ProductPrice}" FontSize="10"  Width="350" HorizontalContentAlignment="Left"></Label>
                             </Grid>
 
                         <Grid Grid.Column="2">
-                            <Label x:Name="countLabel" Content="Колличество на складе"></Label>
+                            <Label x:Name="countLabel" Content="{Binding ProductStock}"></Label>
                         </Grid>
                     </Grid>
                 </DataTemplate>
