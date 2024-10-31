@@ -28,7 +28,21 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                if (Classes.Manager.frameHelper.CanGoBack == true)
+                {
+                    Classes.Manager.frameHelper.GoBack();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
         }
 
         private void addBtn_Click(object sender, RoutedEventArgs e)
