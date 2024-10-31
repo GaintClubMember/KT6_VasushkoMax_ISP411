@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:KT_6_MaxVasushko_ISP_411"
         mc:Ignorable="d"
         Icon="/Resources/Icon.ico"
-        Title="{Binding ElementName=frameContainer, Path=Content.Title}" Height="600" Width="800">
+        Title="{Binding ElementName=frameContainer, Path=Content.Title}" Height="640" Width="800">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -22,7 +22,7 @@
             </Grid.ColumnDefinitions>
             
             <Image Grid.Column="0" Source="/Resources/logo.png" HorizontalAlignment="Right"></Image>
-            <Label Grid.Column="1" Grid.ColumnSpan="2" Content="ООО «Товары для животных»" VerticalAlignment="Center"></Label>
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Content="ООО «Товары для животных»" VerticalAlignment="Center" Width="300" HorizontalAlignment="Left" Margin="20,0,0,0"></Label>
         </Grid>
         
         <Frame Grid.Row="1" x:Name="frameContainer" NavigationUIVisibility="Hidden"></Frame>

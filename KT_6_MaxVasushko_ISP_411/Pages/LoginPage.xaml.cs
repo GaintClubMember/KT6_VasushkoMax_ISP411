@@ -35,8 +35,8 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
             string login = loginBox.Text;
             string password = passwordBox.Password;
 
-            bool userExists = Data.Trade_Entities.GetContext().User.Any(d => d.UserLogin == login);
-            bool userSuccessAuth = Data.Trade_Entities.GetContext().User.Any(d => d.UserLogin == login && d.UserPassword == password);
+            bool userExists = Data.Trade_KT6_Entities.GetContext().User.Any(d => d.UserLogin == login);
+            bool userSuccessAuth = Data.Trade_KT6_Entities.GetContext().User.Any(d => d.UserLogin == login && d.UserPassword == password);
 
             if (userExists == false)
             {
@@ -65,7 +65,7 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
                 if (userSuccessAuth == true)
                 {
                     StringBuilder roleString = new StringBuilder();
-                    var authentificatedUserData = Data.Trade_Entities.GetContext().User.Where(d => d.UserLogin == login && d.UserPassword == password).FirstOrDefault();
+                    var authentificatedUserData = Data.Trade_KT6_Entities.GetContext().User.Where(d => d.UserLogin == login && d.UserPassword == password).FirstOrDefault();
 
                     if (authentificatedUserData.Role.RoleName == "Администратор")
                     {
@@ -87,6 +87,11 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
                     }
                 }
             }
+        }
+
+        private void guestBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

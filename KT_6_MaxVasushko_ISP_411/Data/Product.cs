@@ -14,6 +14,12 @@ namespace KT_6_MaxVasushko_ISP_411.Data
     
     public partial class Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            this.OrderProduct = new HashSet<OrderProduct>();
+        }
+    
         public int ProductId { get; set; }
         public string ProductArticle { get; set; }
         public int ProductNameId { get; set; }
@@ -28,5 +34,13 @@ namespace KT_6_MaxVasushko_ISP_411.Data
         public string ProductDescription { get; set; }
         public byte[] ProductPhotoImage { get; set; }
         public string ProductPhotoName { get; set; }
+    
+        public virtual Categories Categories { get; set; }
+        public virtual Manufacturer Manufacturer { get; set; }
+        public virtual Names Names { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderProduct> OrderProduct { get; set; }
+        public virtual Supplier Supplier { get; set; }
+        public virtual Units Units { get; set; }
     }
 }

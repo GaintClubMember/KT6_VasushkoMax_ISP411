@@ -5,47 +5,69 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KT_6_MaxVasushko_ISP_411.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="530" d:DesignWidth="800"
       Title="AdminListViewPage">
 
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="55"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="">
+        <Grid Grid.Row="0" VerticalAlignment="Top">
             <!-- here needs to be panel with radio buttons and textbox for finding items -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox x:Name="findBox" Width="250" HorizontalAlignment="Center" Margin="8"  TextChanged="findBox_TextChanged"></TextBox>
+                <RadioButton x:Name="sortDESCRadioBtn" Width="175" Margin="8" VerticalAlignment="Center" Content="По возрастанию" Checked="sortDESCRadioBtn_Checked"></RadioButton>
+                <RadioButton x:Name="sortASCRadioBtn" Width="150" Margin="8"  Content="По убыванию" VerticalAlignment="Center" Checked="sortASCRadioBtn_Checked"></RadioButton>
+            </StackPanel>
         </Grid>
         
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+        
+        <!-- listview bellow -->
+        <ListView Grid.Row="1" x:Name="listViewPlace">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    
+                    <Grid Height="110" Width="780">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                            <Image x:Name="imagePlace"></Image>
+                            </Grid>
+
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" x:Name="itemName" Content="{Binding Names.NamesName}" FontSize="10"></Label>
+                            <Label Grid.Row="0" x:Name="itemDesc" Content="{Binding ProductDescription}" FontSize="10"></Label>
+                            <Label Grid.Row="0" x:Name="itemManufacturer" Content="" FontSize="10"></Label >
+                            <Label Grid.Row="0" x:Name="itemPrice" Content="" FontSize="10"></Label>
+                            </Grid>
+
+                        <Grid Grid.Column="2">
+                            <Label x:Name="countLabel" Content="Колличество на складе"></Label>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!-- listview upp -->
             
-            <Image x:Name="itemImage" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
-
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <Label Grid.Row="0" x:Name="itemName" Content="{Binding }"></Label>
-                <Label Grid.Row="0" x:Name="itemDesc" Content="{Binding }"></Label>
-                <Label Grid.Row="0" x:Name="itemManufacturer" Content="{Binding }"></Label>
-                <Label Grid.Row="0" x:Name="itemPrice" Content="{Binding }"></Label>
-
-            </Grid>
-        </Grid>
-
-        <Grid Grid.Row="1">
+            
+      
+        <Grid Grid.Row="2" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>

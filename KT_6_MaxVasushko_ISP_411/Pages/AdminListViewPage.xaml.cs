@@ -23,6 +23,7 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
         public AdminListViewPage()
         {
             InitializeComponent();
+            loadListView();
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
@@ -34,5 +35,29 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
         {
 
         }
+
+        private void sortDESCRadioBtn_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void sortASCRadioBtn_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void findBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+
+        // METHODS
+        private void loadListView()
+        {
+            listViewPlace.ItemsSource = Data.Trade_KT6_Entities.GetContext().Product.ToList();
+
+        }
+
     }
 }

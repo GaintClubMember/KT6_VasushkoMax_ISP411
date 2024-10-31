@@ -24,6 +24,7 @@ namespace KT_6_MaxVasushko_ISP_411.Data
         public string OrderPickUpPointCity { get; set; }
         public string OrderPickUpPointStreet { get; set; }
         public string OrderPickUpPointBuilding { get; set; }
+        public string OrderPickUpPointIndex { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }

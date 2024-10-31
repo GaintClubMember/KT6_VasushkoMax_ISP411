@@ -12,14 +12,18 @@ namespace KT_6_MaxVasushko_ISP_411.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderProduct
+    public partial class Categories
     {
-        public int OrderProductId { get; set; }
-        public int OrderId { get; set; }
-        public int OrderProductItem { get; set; }
-        public int OrderProductCount { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Categories()
+        {
+            this.Product = new HashSet<Product>();
+        }
     
-        public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
+        public int CategoriesId { get; set; }
+        public string CategoriesName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

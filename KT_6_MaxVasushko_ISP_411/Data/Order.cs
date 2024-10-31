@@ -24,12 +24,13 @@ namespace KT_6_MaxVasushko_ISP_411.Data
         public System.DateTime OrderDate { get; set; }
         public System.DateTime OrderDeliveryDate { get; set; }
         public int OrderPickupPointId { get; set; }
-        public int OrderUserId { get; set; }
+        public Nullable<int> OrderUserId { get; set; }
         public int OrderCode { get; set; }
         public int OrderStatusId { get; set; }
     
         public virtual OrderPickUpPoint OrderPickUpPoint { get; set; }
         public virtual OrderStatus OrderStatus { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
     }

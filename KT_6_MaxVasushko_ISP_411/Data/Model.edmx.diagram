@@ -4,19 +4,31 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e823614ed0f142a2ad8cf5af5393e038" Name="Diagram1">
-        <EntityTypeShape EntityType="Trade_KT6Model.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Trade_KT6Model.OrderPickUpPoint" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Trade_KT6Model.OrderProduct" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Trade_KT6Model.OrderStatus" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Trade_KT6Model.Product" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Trade_KT6Model.Role" Width="1.5" PointX="2.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Trade_KT6Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Trade_KT6Model.User" Width="1.5" PointX="5" PointY="5" IsExpanded="true" />
+      <Diagram DiagramId="485533e095c44f04b43666bda07d19b2" Name="Diagram1">
+        <EntityTypeShape EntityType="Trade_KT6Model.Categories" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.Manufacturer" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.Names" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.Order" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.OrderPickUpPoint" Width="1.5" PointX="0.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.OrderProduct" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.OrderStatus" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.Product" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.Role" Width="1.5" PointX="1.5" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.Supplier" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.Units" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Trade_KT6Model.User" Width="1.5" PointX="0.75" PointY="20.625" IsExpanded="true" />
+        <AssociationConnector Association="Trade_KT6Model.FK_Product_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="Trade_KT6Model.FK_Product_Manufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="Trade_KT6Model.FK_Product_Names" ManuallyRouted="false" />
         <AssociationConnector Association="Trade_KT6Model.FK_Order_OrderPickUpPoint" ManuallyRouted="false" />
         <AssociationConnector Association="Trade_KT6Model.FK_Order_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="Trade_KT6Model.FK_Order_User" ManuallyRouted="false" />
         <AssociationConnector Association="Trade_KT6Model.FK_OrderProduct_Order" ManuallyRouted="false" />
-        <AssociationConnector Association="Trade_KT6Model.FK__User__UserRole__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="Trade_KT6Model.FK_OrderProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="Trade_KT6Model.FK_Product_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="Trade_KT6Model.FK_Product_Units" ManuallyRouted="false" />
+        <AssociationConnector Association="Trade_KT6Model.FK__User__UserRoleId__619B8048" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
