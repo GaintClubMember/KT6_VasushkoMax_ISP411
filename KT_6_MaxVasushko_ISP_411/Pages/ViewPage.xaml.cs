@@ -15,13 +15,11 @@ using System.Windows.Shapes;
 
 namespace KT_6_MaxVasushko_ISP_411.Pages
 {
-    public partial class AdminListViewPage : Page
+    public partial class ViewPage : Page
     {
-        public AdminListViewPage(string fio)
+        public ViewPage(string fio)
         {
             InitializeComponent();
-            loadListView();
-
             fioLabel.Content = fio;
         }
 
@@ -32,18 +30,6 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
                 Classes.Manager.frameHelper.Navigate(new Pages.LoginPage());
             }
             catch (Exception ex)
-            {
-                return;
-            }
-        }
-
-        private void addBtn_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                Classes.Manager.frameHelper.Navigate(new Pages.AddPage());
-            }
-            catch(Exception ex)
             {
                 return;
             }
@@ -103,20 +89,6 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
             {
                 listViewPlace.ItemsSource = Data.Trade_KT6_Entities.GetContext().Product.ToList();
 
-            }
-            catch (Exception ex)
-            {
-                return;
-            }
-        }
-
-        private void listViewPlace_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-            try
-            {
-                //Classes.Manager.frameHelper.Navigate(new Pages.AddPage());
-                // here needs to be navigation which sends context to EditPage
             }
             catch (Exception ex)
             {

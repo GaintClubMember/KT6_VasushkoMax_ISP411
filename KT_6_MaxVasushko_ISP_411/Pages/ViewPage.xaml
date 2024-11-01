@@ -1,12 +1,12 @@
-﻿<Page x:Class="KT_6_MaxVasushko_ISP_411.Pages.AdminListViewPage"
+﻿<Page x:Class="KT_6_MaxVasushko_ISP_411.Pages.ViewPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KT_6_MaxVasushko_ISP_411.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="530" d:DesignWidth="800"
-      Title="ООО «Товары для животных» - Просмотр товаров Администратор">
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ООО «Товары для животных» - Просмотр товаров">
 
     <Grid>
 
@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
 
         <Label x:Name="fioLabel" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="10"></Label>
-        
+
         <Grid Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center">
             <!-- here needs to be panel with radio buttons and textbox for finding items -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -26,10 +26,10 @@
                 <RadioButton x:Name="sortASCRadioBtn" Width="150" Margin="8,18,0,0"  Content="По убыванию" VerticalAlignment="Center" Checked="sortASCRadioBtn_Checked"></RadioButton>
             </StackPanel>
         </Grid>
-        
-        
+
+
         <!-- listview bellow -->
-        <ListView Grid.Row="1" x:Name="listViewPlace" HorizontalAlignment="Center"  Width="750" SelectionChanged="listViewPlace_SelectionChanged">
+        <ListView Grid.Row="1" x:Name="listViewPlace" HorizontalAlignment="Center"  Width="750" >
             <ListView.ItemTemplate >
                 <DataTemplate>
                     <Grid Height="110" Width="750">
@@ -39,25 +39,25 @@
                             <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                            <Grid Grid.Column="0">
+                        <Grid Grid.Column="0">
                             <Image x:Name="imagePlace">
                                 <!-- Need to add NULL value picture -->
                             </Image>
-                            </Grid>
+                        </Grid>
 
-                            <Grid Grid.Column="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
 
                             <Label Grid.Row="0" x:Name="itemName" Content="{Binding Names.NamesName}" Width="350" FontSize="13" FontWeight="Bold" HorizontalAlignment="Left"></Label>
                             <Label Grid.Row="1" x:Name="itemDesc" Content="{Binding ProductDescription}" Width="350" FontSize="10" HorizontalAlignment="Left"></Label>
                             <Label Grid.Row="2" x:Name="itemManufacturer" Content="{Binding Manufacturer.ManufacturerName}"  Width="350" FontSize="10" HorizontalAlignment="Left"></Label >
                             <Label Grid.Row="3" x:Name="itemPrice" Content="{Binding ProductPrice}" FontSize="10"  Width="350" HorizontalContentAlignment="Left"></Label>
-                            </Grid>
+                        </Grid>
 
                         <Grid Grid.Column="2">
                             <Label x:Name="countLabel" Content="{Binding ProductStock}"></Label>
@@ -67,18 +67,17 @@
             </ListView.ItemTemplate>
         </ListView>
         <!-- listview upp -->
-            
-            
-      
+
+
+
         <Grid Grid.Row="2" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+
             <Button Grid.Column="0" x:Name="backBtn" Content="Назад" Click="backBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
-            <Button Grid.Column="1" x:Name="addBtn" Content="Добавить" Click="addBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
         </Grid>
-        
+
     </Grid>
 </Page>
