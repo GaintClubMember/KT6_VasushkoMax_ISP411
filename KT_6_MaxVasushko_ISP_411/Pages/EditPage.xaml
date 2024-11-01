@@ -1,0 +1,58 @@
+﻿<Page x:Class="KT_6_MaxVasushko_ISP_411.Pages.EditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KT_6_MaxVasushko_ISP_411.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="530" d:DesignWidth="800"
+      Title="ООО «Товары для животных» - Изменение товара">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Grid.Row="0" Width="250">
+                <Label Content="ID:" HorizontalAlignment="Left"></Label>
+                <TextBox x:Name="idBlock" Text="AUTO" HorizontalAlignment="Left" IsEnabled="False" Width="70"></TextBox>
+
+                <Label Content="Название:" HorizontalAlignment="Left"></Label>
+                <TextBox x:Name="nameBox"  HorizontalAlignment="Left" Width="230"></TextBox>
+
+                <Label Content="Категория" HorizontalAlignment="Left"></Label>
+                <ComboBox x:Name="categoryComboBox" HorizontalAlignment="Left" Width="230"></ComboBox>
+
+                <Label Content="Колличество на складе:" HorizontalAlignment="Left"></Label>
+                <TextBox x:Name="countBox" HorizontalAlignment="Left" Width="230"></TextBox>
+
+                <Label Content="Единица измерения:" HorizontalAlignment="Left"></Label>
+                <TextBox x:Name="unitsBox" HorizontalAlignment="Left" Width="230"></TextBox>
+
+                <Label Content="Поставщик:" HorizontalAlignment="Left"></Label>
+                <TextBox x:Name="supplierBox" HorizontalAlignment="Left" Width="230"></TextBox>
+
+                <Label Content="Стоимость за ед. :"  HorizontalAlignment="Left"></Label>
+                <TextBox x:Name="priceBox" HorizontalAlignment="Left" Width="230"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="0">
+                <Image x:Name="imagePlace" Width="250" Height="300"></Image>
+                <Label Content="Описание:" HorizontalAlignment="Left"></Label>
+                <TextBox x:Name="descBox" Width="250" Height="150" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"></TextBox>
+            </StackPanel>
+        </Grid>
+
+        <Button x:Name="backBtn"  Grid.Row="1" HorizontalAlignment="Left" Content="Назад" VerticalAlignment="Center" Click="backBtn_Click"></Button>
+        <Button x:Name="acceptBtn" Grid.Row="1" HorizontalAlignment="Right" Content="Подтвердить" VerticalAlignment="Center" Click="acceptBtn_Click"></Button>
+
+
+    </Grid>
+</Page>

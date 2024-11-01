@@ -17,11 +17,13 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
 {
     public partial class AdminListViewPage : Page
     {
+        string fioPage = "";
         public AdminListViewPage(string fio)
         {
             InitializeComponent();
             loadListView();
 
+            fioPage = fio;
             fioLabel.Content = fio;
         }
 
@@ -41,7 +43,7 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
         {
             try
             {
-                Classes.Manager.frameHelper.Navigate(new Pages.AddPage());
+                Classes.Manager.frameHelper.Navigate(new Pages.AddPage(fioPage));
             }
             catch(Exception ex)
             {
@@ -115,7 +117,7 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
 
             try
             {
-                //Classes.Manager.frameHelper.Navigate(new Pages.AddPage());
+                Classes.Manager.frameHelper.Navigate(new Pages.EditPage(fioPage));
                 // here needs to be navigation which sends context to EditPage
             }
             catch (Exception ex)

@@ -22,9 +22,6 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
         public LoginPage()
         {
             InitializeComponent();
-
-            loginBox.Text = "pixil59@gmail.com";
-            passwordBox.Password = "2L6KZG";
         }
 
         private void acceptBtn_Click(object sender, RoutedEventArgs e)
@@ -113,6 +110,7 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
             {
                 string fioNULL = null;
                 Classes.Manager.frameHelper.Navigate(new Pages.ViewPage(fioNULL));
+                MessageBox.Show("Вы авторизованны как Гость", "Успешно авторизировано", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch(Exception ex)
             {

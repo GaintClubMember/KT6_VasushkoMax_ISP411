@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,15 +16,16 @@ using System.Windows.Shapes;
 
 namespace KT_6_MaxVasushko_ISP_411.Pages
 {
-    public partial class AddPage : Page
+    public partial class EditPage : Page
     {
         Data.Product item;
         string fioPage = "";
-        public AddPage(string fio)
+        public EditPage(string fio)
         {
             InitializeComponent();
             fioPage = fio;
         }
+
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -41,16 +43,16 @@ namespace KT_6_MaxVasushko_ISP_411.Pages
             try
             {
                 StringBuilder errors = new StringBuilder();
-                
+
                 // basic checks
 
-                
+
                 if (errors.Length <= 0)
                 {
-                    // get and write data to item
+                    // get and rewrite data to item
 
                     // save
-                    Data.Trade_KT6_Entities.GetContext().Product.Add(item);
+                    //Data.Trade_KT6_Entities.GetContext().Product.Add(item);
                     Data.Trade_KT6_Entities.GetContext().SaveChanges();
                 }
                 if (errors.Length > 0)
